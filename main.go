@@ -17,7 +17,7 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	fmt.Println("Rest API - Simple Tutorial")
+	fmt.Println("Rest API - Simple Tutorial v0.1")
 
 	handleRequests()
 
