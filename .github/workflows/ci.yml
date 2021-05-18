@@ -2,22 +2,35 @@ name: Go
 
 on:
   push:
-    branches: [ dev ]
+    branches: [ master ]
 
 jobs:
 
   build:
+    name: Build the project
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v2
 
-    - name: Set up Go
-      uses: actions/setup-go@v2
-      with:
-        go-version: 1.15
+    - name: CURL ask
+    - run: |
+      CODE = ´curl --write-out '%{http_code}' --url http://wwww.google.com ´
+      echo $CODE
+      if [ $CODE!="200" ] 
+      then
+        echo "FAILURE"
+      else
+        echo "SUCCESS"
+      fi
+    
+   # - name: Set up Go
+   #   uses: actions/setup-go@v2
+   #   with:
+   #     go-version: 1.15
 
-    - name: Build
-      run: go build -v ./...
+  #  - name: Compile
+  #    run: go build -v ./...
 
-  #  - name: Test
+  #  - name: Testing
   #    run: go test -v ./...
