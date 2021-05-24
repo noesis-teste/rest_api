@@ -15,8 +15,8 @@ jobs:
 
     - name: CURL ask
       run: |
-      apiResults=$(curl https://reqbin.com/echo/get/json -H "Accept: application/json" )
-      echo "test - $apiResults"
+        apiResults=$(curl https://reqbin.com/echo/get/json -H "Accept: application/json" )
+        echo "test - $apiResults"
     
    # - name: Set up Go
    #   uses: actions/setup-go@v2
