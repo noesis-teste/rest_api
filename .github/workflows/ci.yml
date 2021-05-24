@@ -7,16 +7,33 @@ on:
 jobs:
 
   build:
-    name: Build the project
+    name: Run test on NTX
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    #- uses: actions/checkout@v2
+    - name: NTX action step
+      id: NTX
+      uses: noesis-teste/ntx-action@v1
+      with:
+        ntx-url: 'localhost:8080'
 
-    - name: CURL ask
-      run: |
-        apiResults=$(curl https://reqbin.com/echo/get/json -H "Accept: application/json" )
-        echo "test - $apiResults"
+    - name: Get the output
+      run: echo "The test was ${{ steps.ntx.outputs.status}}"
+
+
+
+
+
+
+
+
+
+
+    #- name: CURL ask
+    #  run: |
+    #    apiResults=$(curl https://reqbin.com/echo/get/json -H "Accept: application/json" )
+    #    echo "test - $apiResults"
     
    # - name: Set up Go
    #   uses: actions/setup-go@v2
