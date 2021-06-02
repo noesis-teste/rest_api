@@ -12,22 +12,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    #- uses: actions/checkout@v2
-    - name: Run Tests with NTX
-      id: NTX
-      uses: noesis-teste/ntx-action@v2.1
-      with:
-        domain: 'http://srvwp15.westeurope.cloudapp.azure.com:8084/NTX'
-        uri: '/ntxWebService?LinkID=149&TypeID=1&MachineID=132&RepositoryID=3&ProjectID=10600&Version=10800&Cycle=PROJ2021-1&UserId=46&ServerURL=3&EnvironmentId=8'
-        username: 'alho'
-        password: ${{ secrets.NTX_PASSWORD }}
-        wait-time: 10
+      #- uses: actions/checkout@v2
+      - name: Run Tests with NTX
+        id: NTX
+        uses: noesis-teste/ntx-action@v2.1
+        with:
+          domain: 'http://srvwp15.westeurope.cloudapp.azure.com:8084/NTX'
+          uri: '/ntxWebService?LinkID=149&TypeID=1&MachineID=132&RepositoryID=3&ProjectID=10600&Version=10800&Cycle=PROJ2021-1&UserId=46&ServerURL=3&EnvironmentId=8'
+          username: 'alho'
+          password: ${{ secrets.NTX_PASSWORD }}
+          wait-time: 10
     
-    - name: Set up Go
-      uses: actions/setup-go@v2
-      with:
-        go-version: 1.15
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.15
 
-    - name: Compile
-      run: go build -v ./...
+      - name: Compile
+        run: go build -v ./...
 
