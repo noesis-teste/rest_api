@@ -13,6 +13,7 @@ jobs:
 
     steps:
       #- uses: actions/checkout@v2
+      
       - name: Run Tests with NTX
         id: NTX
         uses: noesis-teste/ntx-action@v2.1
@@ -23,11 +24,9 @@ jobs:
           password: ${{ secrets.NTX_PASSWORD }}
           wait-time: 10
     
-      - name: Set up Go
-        uses: actions/setup-go@v2
-        with:
-          go-version: 1.15
+      - name: Get the output
+        run: echo "The test was ${{ steps.ntx.outputs.status}}"
 
-      - name: Compile
-        run: go build -v ./...
+   #   - name: Compile
+   #     run: go build -v ./...
 
