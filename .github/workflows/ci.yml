@@ -18,12 +18,15 @@ jobs:
       # http://localhost:8084/NTX
       # /ntxWebService?LinkID=88&TypeID=1&MachineID=71&RepositoryID=3&ProjectID=10100&Version=10100&Cycle=PDT-2396&UserId=14&ServerURL=3&EnvironmentId=5
 
+
+      #  http://srvwp15.westeurope.cloudapp.azure.com:8084/NTX/ntxWebService?LinkID=2&TypeID=1&MachineID=2&RepositoryID=3&ProjectID=10100&Version=10000&Cycle=PROJNTX-1128&UserId=50&ServerURL=3&EnvironmentId=8
+
       - name: Run Tests with NTX
         id: NTX
         uses: noesis-teste/ntx-action@V2.1
         with:
-          domain: 'http://localhost:8084/NTX'
-          uri: '/ntxWebService?LinkID=88&TypeID=1&MachineID=71&RepositoryID=3&ProjectID=10100&Version=10100&Cycle=PDT-2396&UserId=14&ServerURL=3&EnvironmentId=5'
+          domain: 'http://srvwp15.westeurope.cloudapp.azure.com:8084/NTX'
+          uri: '/ntxWebService?LinkID=2&TypeID=1&MachineID=2&RepositoryID=3&ProjectID=10100&Version=10000&Cycle=PROJNTX-1128&UserId=50&ServerURL=3&EnvironmentId=8'
           username: 'admin'
           password: ${{ secrets.NTX_PASSWORD }}
           wait-time: 10
