@@ -31,6 +31,6 @@ jobs:
       - name: Get the output
         run: echo "The test was ${{ steps.ntx.outputs.status}}"
 
-   #   - name: Compile
+   #  - name: Compile
    #     run: go build -v ./...
 
