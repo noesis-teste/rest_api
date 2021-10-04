@@ -24,7 +24,7 @@ jobs:
         with:
           domain: 'http://localhost:8084/NTX'
           uri: '/ntxWebService?LinkID=88&TypeID=1&MachineID=71&RepositoryID=3&ProjectID=10100&Version=10100&Cycle=PDT-2396&UserId=14&ServerURL=3&EnvironmentId=5'
-          username: ${{ secrets.NTX_USERNAME }}
+          username: 'admin'
           password: ${{ secrets.NTX_PASSWORD }}
           wait-time: 10
     
