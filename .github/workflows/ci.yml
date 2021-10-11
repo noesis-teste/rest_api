@@ -12,18 +12,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # uses: actions/checkout@v2  http://srvwd41.westeurope.cloudapp.azure.com:8084/NTX
-      # /ntxWebService?LinkID=157&TypeID=1&MachineID=128&RepositoryID=2&ProjectID=0bd5b276-08aa-4cd7-b6c1-0f18b7bcf951&Version=1&Cycle=2&UserId=15&ServerURL=19&EnvironmentId=8&Collection=DefaultCollection&Token=qafbanqku4ckwt4jnt7lcretgvfqpo4nthacvoixsvbhnryql2ua
+    
 
 
-      #  http://srvwp15.westeurope.cloudapp.azure.com:8084/NTX/ntxWebService?LinkID=2&TypeID=1&MachineID=2&RepositoryID=3&ProjectID=10100&Version=10000&Cycle=PROJNTX-1128&UserId=50&ServerURL=3&EnvironmentId=8
-
+http://srvwp15.westeurope.cloudapp.azure.com:8084/NTX
       - name: Run Tests with NTX
         id: NTX
         uses: NTXnoesis/ntx-action@V1.0
         with:
           domain: 'http://srvwp15.westeurope.cloudapp.azure.com:8084/NTX'
-          uri: '/ntxWebService?LinkID=2&TypeID=1&MachineID=2&RepositoryID=3&ProjectID=10100&Version=10000&Cycle=PROJNTX-1128&UserId=50&ServerURL=3&EnvironmentId=8'
+          uri: '/ntxWebService?LinkID=2&TypeID=1&MachineID=2&RepositoryID=3&ProjectID=10600&Version=10800&Cycle=PROJ2021-1671&UserId=50&ServerURL=3&EnvironmentId=8'
           username: 'admin'
           password: ${{ secrets.NTX_PASSWORD }}
           wait-time: 10
